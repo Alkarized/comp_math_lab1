@@ -21,8 +21,12 @@ public class FileReaderCommand extends Command {
                 System.out.println("Введите название файла");
                 String filename = new Scanner(System.in).nextLine();
                 fileScanner = new Scanner(new File(filename));
+                int iter = fileScanner.nextInt();
+                double epsilon = fileScanner.nextDouble();
                 int size = fileScanner.nextInt();
 
+                getRuler().setMaxIterations(iter);
+                getRuler().setEpsilon(epsilon);
                 getRuler().setMatrix(MatrixCreator.createMatrix(size, fileScanner));
 
                 break;

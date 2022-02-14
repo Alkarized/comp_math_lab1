@@ -17,7 +17,8 @@ public class MathCommand extends Command {
     public void execute() {
         Matrix matrix = getRuler().getMatrix();
         //Диагональная фигня
-        if (checkDiagonal(matrix)) {
+        if (findDiagonal(matrix)) {
+            System.out.println(matrix.toString());
             double[] dArray = makeZeroIteration(matrix); //Вектор первоначальных значений (начальное приближение)
             System.out.println("Итерация №0");
             ArraysPrinter.print("Начальное приближение", dArray, getRuler().getEpsilon());
@@ -57,6 +58,36 @@ public class MathCommand extends Command {
             System.out.println("Не удалось получить условия диагонального преобладания");
         }
     }
+
+    private boolean findDiagonal(Matrix matrix) {
+        for (int x = 0; x < matrix.getSize(); x++) {
+            double diagonalElement;
+            double sum;
+            boolean isChanged = false;
+            for (int i = x; i < matrix.getSize(); i++) {
+                diagonalElement = Math.abs(matrix.getElementsArray()[i][x]);
+                sum = 0;
+                for (int j = 0; j < matrix.getSize(); j++) {
+                    sum += Math.abs(matrix.getElementsArray()[i][j]);
+                }
+                sum -= diagonalElement;
+                if (diagonalElement >= sum) {
+                    double[] temp = matrix.getElementsArray()[x];
+                    matrix.getElementsArray()[x] = matrix.getElementsArray()[i];
+                    matrix.getElementsArray()[i] = temp;
+
+                    double temp2 = matrix.getBArray()[x];
+                    matrix.getBArray()[x] = matrix.getBArray()[i];
+                    matrix.getBArray()[i] = temp2;
+                    isChanged = true;
+                }
+            }
+            if (!isChanged) return false;
+        }
+        return true;
+    }
+
+
 
     private boolean checkDiagonal(Matrix matrix) {
         boolean isCanBeDiagonal = true;

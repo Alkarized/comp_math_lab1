@@ -7,7 +7,7 @@ public class ArraysPrinter {
             if (epsilon > 1) {
                 System.out.format("%" + (String.valueOf(epsilon).length() + 1) + ".f ", v);
             } else {
-                System.out.format("%." + (String.valueOf(epsilon).length() - 1) + "f ", v);
+                System.out.format("%." + (String.valueOf(epsilon).length()) + "f ", v);
             }
 
         }
