@@ -18,6 +18,7 @@ public class MathCommand extends Command {
         Matrix matrix = getRuler().getMatrix();
         //Диагональная фигня
         if (findDiagonal(matrix)) {
+            System.out.println("Матрица приведенная к диагональному преобладанию");
             System.out.println(matrix.toString());
             double[] dArray = makeZeroIteration(matrix); //Вектор первоначальных значений (начальное приближение)
             System.out.println("Итерация №0");
