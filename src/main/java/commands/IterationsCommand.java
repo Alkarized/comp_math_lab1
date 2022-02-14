@@ -20,6 +20,7 @@ public class IterationsCommand extends Command {
                 if (iter <= 0) throw new IndexOutOfBoundsException();
                 getRuler().setMaxIterations(iter);
                 break;
+
             } catch (IndexOutOfBoundsException e) {
                 System.out.println("Введенное число не подходит!");
             } catch (Exception e) {
