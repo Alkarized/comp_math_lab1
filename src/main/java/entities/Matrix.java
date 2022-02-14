@@ -7,8 +7,26 @@ import lombok.Setter;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 public class Matrix {
     private int size;
-    private double[][] array;
+    private double[][] elementsArray;
+    private double[] dArray;
+
+    @Override
+    public String toString() {
+        StringBuilder answer = new StringBuilder("\t");
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size + 1; j++) {
+                if (j == size)
+                    answer.append(dArray[i]).append("\n\t");
+                else
+                    answer.append(elementsArray[i][j]).append(" ");
+            }
+        }
+        return "size: " + size + "\n" +
+                "Matrix: \n" + answer.toString();
+
+    }
 }

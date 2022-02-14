@@ -2,8 +2,9 @@ package entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import utils.MatrixRuler;
+
+import java.util.Scanner;
 
 @AllArgsConstructor
 @Getter

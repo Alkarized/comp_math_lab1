@@ -16,5 +16,6 @@ public class ProgramStarter {
         else
             invoker.getCommands().get("terminal").execute();
 
+        System.out.println(ruler.getMatrix());
     }
 }

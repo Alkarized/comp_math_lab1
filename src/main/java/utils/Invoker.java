@@ -10,11 +10,11 @@ public class Invoker {
     @Getter
     private final HashMap<String, Command> commands;
 
-    public Invoker(){
+    public Invoker() {
         commands = new HashMap<>();
     }
 
-    public void setCommands(MatrixRuler ruler){
+    public void setCommands(MatrixRuler ruler) {
         commands.put("epsilon", new EpsilonReaderCommand(ruler));
         commands.put("file", new FileReaderCommand(ruler));
         commands.put("math", new MathCommand(ruler));

@@ -15,13 +15,14 @@ public class EpsilonReaderCommand extends Command {
     public void execute() {
         while (true) {
             try {
-                Scanner scanner = new Scanner(System.in);
                 System.out.println("Введите точность");
-                double eps = Double.parseDouble(scanner.nextLine().trim());
+                double eps = Double.parseDouble( new Scanner(System.in).nextLine().trim());
+
                 if (eps < 0) throw new Exception();
+
                 getRuler().setEpsilon(eps);
+
                 System.out.println("Введенная точность - " + eps);
-                scanner.close();
                 break;
             } catch (Exception e) {
                 System.out.println("Введена неправильная точность!");

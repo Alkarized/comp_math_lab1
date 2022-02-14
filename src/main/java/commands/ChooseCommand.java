@@ -17,14 +17,11 @@ public class ChooseCommand extends Command {
             try {
                 printChose();
 
-                Scanner scanner = new Scanner(System.in); //Возможно стоит поместить его в конструкцию try(Scanner ...)?
-
-                int choose = scanner.nextInt();
+                int choose = new Scanner(System.in).nextInt();
                 if (choose != 1 && choose != 2) throw new Exception();
 
                 getRuler().setChosenOption(choose);
 
-                scanner.close();
                 break;
             } catch (Exception e) {
                 System.out.println("Неправильный выбор, исправляйся");
