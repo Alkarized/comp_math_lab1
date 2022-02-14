@@ -1,7 +1,7 @@
 package commands;
 
 import entities.Command;
-import utils.MatrixRuler;
+import entities.MatrixRuler;
 
 public class MathCommand extends Command {
 

@@ -1,4 +1,4 @@
-package utils;
+package entities;
 
 import entities.Matrix;
 import lombok.Getter;
@@ -10,5 +10,6 @@ public class MatrixRuler {
     private Matrix matrix;
     private double epsilon;
     private int chosenOption;
+    private int maxIterations;
 
 }

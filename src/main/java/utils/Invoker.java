@@ -2,6 +2,7 @@ package utils;
 
 import commands.*;
 import entities.Command;
+import entities.MatrixRuler;
 import lombok.Getter;
 
 import java.util.HashMap;
@@ -20,5 +21,6 @@ public class Invoker {
         commands.put("math", new MathCommand(ruler));
         commands.put("terminal", new TerminalReaderCommand(ruler));
         commands.put("choose", new ChooseCommand(ruler));
+        commands.put("iterations", new IterationsCommand(ruler));
     }
 }

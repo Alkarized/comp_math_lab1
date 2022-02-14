@@ -12,7 +12,7 @@ import lombok.Setter;
 public class Matrix {
     private int size;
     private double[][] elementsArray;
-    private double[] dArray;
+    private double[] bArray;
 
     @Override
     public String toString() {
@@ -20,7 +20,7 @@ public class Matrix {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size + 1; j++) {
                 if (j == size)
-                    answer.append(dArray[i]).append("\n\t");
+                    answer.append(bArray[i]).append("\n\t");
                 else
                     answer.append(elementsArray[i][j]).append(" ");
             }
