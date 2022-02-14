@@ -20,7 +20,7 @@ public class ProgramStarter {
         else
             invoker.getCommands().get("terminal").execute();
 
-        //System.out.println(ruler.getMatrix());
+        System.out.println(ruler.getMatrix());
 
         invoker.getCommands().get("math").execute();
     }
